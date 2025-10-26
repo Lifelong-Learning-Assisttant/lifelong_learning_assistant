@@ -1,5 +1,7 @@
 # 🧠 Ассистент Lifelong Learning для Deep Learning специалиста
 
+![main_lending](repo_pics/main_lending.png)
+
 # Нравятся проекты:
 
 - **News Assistant AI** 
