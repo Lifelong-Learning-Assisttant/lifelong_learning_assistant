@@ -19,25 +19,35 @@
 
 ```
 docs/
-├─ README.md                 # (эта страница) структура и rationale
-├─ 01-overview.md            # Карта + краткий обзор (mermaid + TL;DR)
-├─ 02-getting-started.md     # Get it started & FAQs (локальный запуск, основные команды)
-├─ 03-architecture.md        # Архитектура & design (концепты, sequence diagrams)
-├─ 04-adr/                   # Architecture Decision Records
+├─ README.md                        # (эта страница) структура и rationale
+├─ 01-overview.md                   # Карта + краткий обзор (mermaid + TL;DR)
+├─ 02-getting-started.md            # Get it started & FAQs (локальный запуск, основные команды)
+├─ 03-architecture.md               # Архитектура & design (концепты, sequence diagrams)
+├─ 04-adr/                          # Architecture Decision Records
 │   ├─ README.md
 │   └─ 0001-use-faiss-vs-remote.md
-├─ 05-changelog.md           # Хронология изменений (high-level)
+├─ 05-changelog.md                  # Хронология изменений (high-level)
+├─ 06-ideas/                        # Сохраняем все наши идеи =)
+│   ├─ idea1.md
+│   └─ idea2.md
+├─ diagrams_src                     # Храним исходники для PluntUML-диаграмм
+│   ├─ 01-overview/
+│   │   ├─ system-diagram.puml      # Исходник диаграммы
+│   │   └─ system-diagram.svg       # Результат рендеринга диаграммы PNG/SVG
+│   └─ other_docs_part
 ├─ components/
-│   ├─ index.md              # Список компонентных карточек (карточки — ссылки)
+│   ├─ index.md                     # Список компонентных карточек (карточки — ссылки)
 │   ├─ cards/
-│   │   ├─ orchestrator.md   # Component Card (короткая)
+│   │   ├─ orchestrator.md          # Component Card (короткая)
 │   │   └─ retriever.md
 │   └─ deep/
 │       ├─ orchestrator-deep.md
 │       └─ retriever-deep.md
-├─ testing-ci.md             # Testing & CI (как запускать, что покрывать)
+├─ dev-tools/                       # Документация по инструментам полезным для разработки
+│   └─ pluntuml_diagram_renderer.md # Рендеринг PluntUML-диаграмм из исходников
+├─ testing-ci.md                    # Testing & CI (как запускать, что покрывать)
 ├─ diagrams/
-│   └─ system.mmd            # mermaid-диаграмма (использовать в overview)
+│   └─ system.mmd                   # mermaid-диаграмма (использовать в overview)
 └─ templates/
     ├─ component-card-template.md
     └─ deep-doc-template.md
@@ -73,6 +83,13 @@ docs/
 
 * Короткие записи по релизам/важным изменениям архитектуры. 
 * Формат: дата — краткое описание — ссылки на PR/ADR.
+
+## 06-ideas/ - Идеи и предложения по проекту
+
+* записываем все наши идеи!
+* потом будет обсуждать их
+* добавлять в задачи
+* и реализовывать!
 
 ## components/ — Component Cards + Deep Dive
 
