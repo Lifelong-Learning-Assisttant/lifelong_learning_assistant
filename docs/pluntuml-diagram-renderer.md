@@ -22,10 +22,10 @@ $env:MOUNT_POINT="/workspace"
 ## Рендеринг всех .puml файлов в SVG
 
 ```
-docker run --rm -v ${PWD}:$env:MOUNT_POINT ghcr.io/vlmhyperbenchteam/plantuml-renderer:latest $env:MOUNT_POINT/docs/diagrams_src/01-overview svg
+docker run --rm -v ${PWD}:$env:MOUNT_POINT ghcr.io/vlmhyperbenchteam/plantuml-renderer:latest $env:MOUNT_POINT/docs/diagrams-src/01-overview svg
 ```
 
 ## Рендеринг всех .puml файлов в PNG
 ```
-docker run --rm -v ${PWD}:$env:MOUNT_POINT ghcr.io/vlmhyperbenchteam/plantuml-renderer:latest $env:MOUNT_POINT/docs/diagrams_src/01-overview png
+docker run --rm -v ${PWD}:$env:MOUNT_POINT ghcr.io/vlmhyperbenchteam/plantuml-renderer:latest $env:MOUNT_POINT/docs/diagrams-src/01-overview png
 ```

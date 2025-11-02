@@ -6,8 +6,6 @@ skinparam classBackgroundColor #FFFFFF
 skinparam classBorderColor #000000
 skinparam shadowing false
 
-title Архитектура системы LLM-агента
-
 package "Внешний уровень" {
   [Пользователь] as U
   [Web UI\nStreamlit Frontend] as UI
@@ -39,8 +37,8 @@ package "Данные пользователя" #E8F5E9 {
 }
 
 package "Абстрактные модули" {
-  [Модуль источников данных] as SRC
-  [Модуль функциональности] as FUNC
+  [Source Module] as SRC
+  [Functional Modules] as FUNC
 }
 
 ' ================== СВЯЗИ ==================

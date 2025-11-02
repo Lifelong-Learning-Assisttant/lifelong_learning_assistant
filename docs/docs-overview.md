@@ -1,10 +1,19 @@
+---
+title: "Структура документации"
+date: "2025-11-02"
+status: "review"
+version: "1.0"
+owner: "@dev-team"
+tags: ["documentation", "structure"]
+---
+
 # Структура документации
 
 **Цель:** лёгкая, минималистичная, но уже «рабочая» документация, которая не перегружает проект на раннем этапе и при этом сразу покрывает нужные области:
 
 - обзор системы и карта проекта и компонентов
 - быстрый старт
-- подробные deep-dive’ы для критичных частей системы
+- подробные deep-dive'ы для критичных частей системы
 
 ## Почему такая структура — кратко
 
@@ -19,39 +28,37 @@
 
 ```
 docs/
-├─ README.md                        # (эта страница) структура и rationale
-├─ 01-overview.md                   # Карта + краткий обзор (mermaid + TL;DR)
-├─ 02-getting-started.md            # Get it started & FAQs (локальный запуск, основные команды)
+├─ docs-overview.md                  # (эта страница) структура и rationale
+├─ 01-overview.md                   # Карта проекта + краткий обзор компонентов
+├─ 02-getting-started.md            # Get it started (локальный запуск, основные команды)
 ├─ 03-architecture.md               # Архитектура & design (концепты, sequence diagrams)
-├─ FAQ/                             # Часто задаваемые вопросы
-│   ├─ README.md                    # Индекс FAQ
+├─ faq/                             # Часто задаваемые вопросы
+│   ├─ faq-overview.md              # Индекс FAQ
 │   └─ 01-retrievir-indices.md      # Работа с retrievir индексами во время обновления
 ├─ 04-adr/                          # Architecture Decision Records
-│   ├─ README.md
+│   ├─ adr-overview.md 
 │   └─ 0001-use-faiss-vs-remote.md
 ├─ 05-changelog.md                  # Хронология изменений (high-level)
-├─ 06-ideas/                        # Сохраняем все наши идеи =)
+├─ 06-ideas/                        # Сохраняем все наши идеи
 │   ├─ idea1.md
 │   └─ idea2.md
-├─ diagrams_src                     # Храним исходники для PluntUML-диаграмм
+├─ diagrams-src                     # Храним исходники для PluntUML-диаграмм
 │   ├─ 01-overview/
 │   │   ├─ system-diagram.puml      # Исходник диаграммы
 │   │   └─ system-diagram.svg       # Результат рендеринга диаграммы PNG/SVG
-│   └─ other_docs_part
-├─ components/
-│   ├─ index.md                     # Список компонентных карточек (карточки — ссылки)
+│   └─ other-docs-part/
+├─ components/                      # Описание каждой компоненты системы
+│   ├─ index.md                     
 │   ├─ cards/
-│   │   ├─ orchestrator.md          # Component Card (короткая)
+│   │   ├─ orchestrator.md          # краткая карточка проекта
 │   │   └─ retriever.md
 │   └─ deep/
-│       ├─ orchestrator-deep.md
+│       ├─ orchestrator-deep.md     # подробное описание компоненты
 │       └─ retriever-deep.md
 ├─ dev-tools/                       # Документация по инструментам полезным для разработки
-│   └─ pluntuml_diagram_renderer.md # Рендеринг PluntUML-диаграмм из исходников
+│   └─ pluntuml-diagram-renderer.md # Рендеринг PluntUML-диаграмм из исходников
 ├─ testing-ci.md                    # Testing & CI (как запускать, что покрывать)
-├─ diagrams/
-│   └─ system.mmd                   # mermaid-диаграмма (использовать в overview)
-└─ templates/
+└─ templates/                       # Шаблоны markdown-файлов для документации
     ├─ component-card-template.md
     └─ deep-doc-template.md
 ```
@@ -60,7 +67,7 @@ docs/
 
 ## 01-overview.md — Карта + краткий обзор
 
-* Описание системы и `mermaid`-диаграмма (файл `diagrams/system.mmd`), текст описывающий потоки данных: пользователь → UI → API → Orchestrator → Retriever/LLM → storages.
+* Описание системы и `mermaid`-диаграмма (файл `diagrams-src/system.mmd`), текст описывающий потоки данных: пользователь → UI → API → Orchestrator → Retriever/LLM → storages.
 * Цель: дать «высокоуровневое» понимание системы.
 
 ## 02-getting-started.md — Быстрый старт
@@ -69,17 +76,16 @@ docs/
 * Как запустить тесты, как создать dev-данные.
 * Контакты: владельцы/команды (owner fields в карточках).
 
-## FAQ/ — Часто задаваемые вопросы
+## faq/ — Часто задаваемые вопросы
 
 * Каждый вопрос и ответ в отдельном markdown файле для удобной навигации.
-* Оригинальный ответ на вопрос извлечён из README.md (строки 585-627).
 * Структурированная документация с техническими деталями и рекомендациями.
 * Файлы в формате: `XX-краткое-описание.md` с полными ответами и примерами.
 
 ## 03-architecture.md — Архитектура & design
 
 * Ключевые концепты (Orchestrator, Retriever, Embedding pipeline, MQ, Workers).
-* 3–5 sequence diagrams для типовых сценариев:
+* диаграммы последовательностей для типовых сценариев:
   * Generate quiz (UI → API → Orchestrator → Retriever → LLM → MQ → Workers → DB)
   * Web snapshot processing (Tavily → FS → MQ → Workers → VDB/ES)
 * Схемы data-flow и краткие упоминания о масштабировании и отказоустойчивости.
@@ -95,10 +101,9 @@ docs/
 
 ## 06-ideas/ - Идеи и предложения по проекту
 
-* записываем все наши идеи!
-* потом будет обсуждать их
-* добавлять в задачи
-* и реализовывать!
+* Записываем все наши идеи!
+* Потом будет обсуждать их
+* Добавлять в задачи и реализовывать!
 
 ## components/ — Component Cards + Deep Dive
 
@@ -112,24 +117,24 @@ docs/
 * Минимум: линтинг markdown/mermaid + тесты, которые запускаются в PR.
 * Примеры команд и чеклист перед merge.
 
-## diagrams/
+## diagrams-src/
 
 * Хранить исходники mermaid, ссылки на export (svg/png) — Docusaurus позже вставит их в docs.
 
 ## templates/
 
-* Шаблоны для карточки и deep-doc, чтобы все радилось в едином стиле.
+* Шаблоны для карточки и deep-doc, чтобы все описывалось в едином стиле.
 
 # Шаблоны
 
 Папка с `templates` содержит шаблоны для заметок в формате `mermaid`.
-- `template_for_any-thing.md` - шаблон для такой то цели.
+- `template-for-any-thing.md` - пример файла-шаблона.
 
 
 # Правила и конвенции (коротко)
 
 * **Язык:** русский (нам проще и можно локализовать позже на другие языки).
-* **Формат:** markdown, `mermaid`/`pluntuml` для диаграмм, OpenAPI для endpoint’ов (в `apis/` когда появятся).
+* **Формат:** markdown, `mermaid`/`pluntuml` для диаграмм, OpenAPI для endpoint'ов (в `apis/` когда появятся).
 * **Naming:** файлы `kebab-case.md`, заголовки H1. Компонентная карточка — в `components/cards/`, deep — в `components/deep/`.
 * **Owner:** каждый компонент будет иметь `Owner` (GitHub handle / команда).
 * **PR workflow:** docs PR — review by owner. CI линтит markdown + проверяет mermaid-ошибки.
@@ -137,14 +142,14 @@ docs/
 
 # Что добавить (опционально, если потребуется)
 
-* **Runbooks/ops/** — отдельная папка с конкретными playbook’ами по restore/rollback.
+* **Runbooks/ops/** — отдельная папка с конкретными playbook'ами по restore/rollback.
 * **Security.md** — политика секретов, хранения PII, шифрования.
 * **API Reference (OpenAPI)** — когда появятся реальные API, положить в `apis/` + auto-generated docs.
 * **Glossary** — если проект растёт и появляются специфичные термины.
 
-# Первые практические шаги (микро-план)
+---
 
-2. Добавить `components/index.md` и **3–5 карточек** (Orchestrator, Retriever, LLM Service, MQ/Workers, Storage).
-3. Наполнить `02-getting-started.md` минимальными командами для локального запуска (docker-compose/dev script).
-4. Создать папку `04-adr/` и добавить первый ADR (например: выбор FAISS).
-5. Подключить линтер markdown в CI и шаблон PR для docs (owner required).
+*Документ создан: 2025-11-02*  
+*Последнее обновление: 2025-11-02*  
+*Версия: 1.0*  
+*Статус: На ревью*
