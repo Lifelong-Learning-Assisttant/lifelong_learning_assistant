@@ -23,6 +23,9 @@ docs/
 ├─ 01-overview.md                   # Карта + краткий обзор (mermaid + TL;DR)
 ├─ 02-getting-started.md            # Get it started & FAQs (локальный запуск, основные команды)
 ├─ 03-architecture.md               # Архитектура & design (концепты, sequence diagrams)
+├─ FAQ/                             # Часто задаваемые вопросы
+│   ├─ README.md                    # Индекс FAQ
+│   └─ 01-retrievir-indices.md      # Работа с retrievir индексами во время обновления
 ├─ 04-adr/                          # Architecture Decision Records
 │   ├─ README.md
 │   └─ 0001-use-faiss-vs-remote.md
@@ -60,12 +63,18 @@ docs/
 * Описание системы и `mermaid`-диаграмма (файл `diagrams/system.mmd`), текст описывающий потоки данных: пользователь → UI → API → Orchestrator → Retriever/LLM → storages.
 * Цель: дать «высокоуровневое» понимание системы.
 
-## 02-getting-started.md — Быстрый старт & FAQs
+## 02-getting-started.md — Быстрый старт
 
 * Как запустить проект локально (docker-compose / dev scripts).
 * Как запустить тесты, как создать dev-данные.
-* Частые вопросы (краткие ответы).
 * Контакты: владельцы/команды (owner fields в карточках).
+
+## FAQ/ — Часто задаваемые вопросы
+
+* Каждый вопрос и ответ в отдельном markdown файле для удобной навигации.
+* Оригинальный ответ на вопрос извлечён из README.md (строки 585-627).
+* Структурированная документация с техническими деталями и рекомендациями.
+* Файлы в формате: `XX-краткое-описание.md` с полными ответами и примерами.
 
 ## 03-architecture.md — Архитектура & design
 
@@ -135,7 +144,6 @@ docs/
 
 # Первые практические шаги (микро-план)
 
-1. Создать `docs/README.md` (эту страницу) и `01-overview.md` с mermaid-диаграммой (копировать ваш уже готовый flowchart).
 2. Добавить `components/index.md` и **3–5 карточек** (Orchestrator, Retriever, LLM Service, MQ/Workers, Storage).
 3. Наполнить `02-getting-started.md` минимальными командами для локального запуска (docker-compose/dev script).
 4. Создать папку `04-adr/` и добавить первый ADR (например: выбор FAISS).
