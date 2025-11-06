@@ -1,0 +1,32 @@
+
+# Operating System and Editor Specific Files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+
+# Build Artifacts
+/build/
+/dist/
+/target/
+*.log
+*.tmp
+*.bak
+
+# Dependencies
+node_modules/
+vendor/
+
+# Environment Variables and Sensitive Data
+.env
+config.local.js
+credentials.json
+
+# Temporary Files and Caches
+*.cache
+tmp/
+
+__pycache__
+.venv
