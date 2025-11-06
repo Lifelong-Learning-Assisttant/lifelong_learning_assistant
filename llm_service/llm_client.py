@@ -12,7 +12,7 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 from logger import get_logger
 from settings import get_settings
-from utils import (
+from llm_service.utils import (
     build_httpx_timeout,
     extract_request_id_from_exc,
     openrouter_headers,
