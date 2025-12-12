@@ -1,3 +1,6 @@
 [submodule "test_generator"]
 	path = test_generator
 	url = https://github.com/Lifelong-Learning-Assisttant/test_generator.git
+[submodule "tavily_search_tool"]
+	path = tavily_search_tool
+	url = https://github.com/Lifelong-Learning-Assisttant/tavily_search_tool.git
