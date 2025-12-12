@@ -4,3 +4,6 @@
 [submodule "tavily_search_tool"]
 	path = tavily_search_tool
 	url = https://github.com/Lifelong-Learning-Assisttant/tavily_search_tool.git
+[submodule "agent_service"]
+	path = agent_service
+	url = https://github.com/Lifelong-Learning-Assisttant/agent_service.git
