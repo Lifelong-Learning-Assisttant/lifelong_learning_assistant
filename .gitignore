@@ -32,3 +32,15 @@ tmp/
 
 __pycache__
 .venv
+
+# Ignore virtual environment
+venv/
+.env/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore logs
+logs/
+*.log
