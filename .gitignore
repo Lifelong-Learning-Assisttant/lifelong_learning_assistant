@@ -1,3 +1,5 @@
+# Ignore Yandex handbook raw markdown data
+data/yandex-handbook-downloaded
 
 # Operating System and Editor Specific Files
 .DS_Store
