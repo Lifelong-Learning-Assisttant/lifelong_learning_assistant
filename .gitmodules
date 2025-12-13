@@ -10,3 +10,6 @@
 [submodule "addition_service"]
 	path = addition_service
 	url = https://github.com/Lifelong-Learning-Assisttant/addition_service.git
+[submodule "web_ui_service"]
+	path = web_ui_service
+	url = https://github.com/Lifelong-Learning-Assisttant/web_ui_service.git
