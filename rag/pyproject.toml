@@ -30,4 +30,6 @@ dependencies = [
     "seaborn>=0.13.2",
     "rouge-score>=0.1.2",
     "nltk>=3.9.2",
+    "ragas>=0.1.0",
+    "datasets>=2.14.0",
 ]
