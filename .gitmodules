@@ -7,3 +7,6 @@
 [submodule "web_ui_service"]
 	path = web_ui_service
 	url = https://github.com/Lifelong-Learning-Assisttant/web_ui_service.git
+[submodule "vpn-utils"]
+	path = vpn-utils
+	url = https://github.com/Lifelong-Learning-Assisttant/vpn-utils.git
